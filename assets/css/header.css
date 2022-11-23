@@ -1,0 +1,37 @@
+:root {
+    --font-primary: #371DAC;
+    --font-secundary: #0A74FF;
+    --font-tertiary: #14080E;
+    --font-quarternary: #111010;
+    --font-quintenary: #F0EFF4;
+    --font-white: #ffffff;
+    --font-black: #000;
+    --font-blue: blue;
+}
+
+/* header */
+.card {
+    border-color: var(--font-quarternary);
+    color: var(--font-quarternary);
+    background-color: var(--font-quintenary);
+}
+
+.navbar {
+    background-color: var(--font-black);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--font-blue);
+}
+.btn.btn-primary.botaosign {
+    background-color: var(--font-black);
+}
+.btn.btn-primary.botaosign:hover {
+    border-color: var(--font-white);
+}
+
+.image_navbar {
+    height: 2em;
+}

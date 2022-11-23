@@ -1,0 +1,46 @@
+:root {
+    --font-primary: #111010;
+    --font-secundary: #f0eff4;
+    --font-featured: #371dac;
+    --font-featured-2: #0a74ff;
+    --font-featured-3: #14080e;
+}
+
+body {
+    text-align: justify;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+main {
+    background-color: var(--font-primary);
+}
+footer {
+    background-color: #111010;
+}
+.card {
+    border-color: var(--font-secundary);
+    color: var(--font-secundary);
+    background-color: var(--font-primary);
+}
+.image__logo_bullying {
+    height: 50px;
+}
+
+.teste {
+    height: 20rem;
+}
+
+.boxlist {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1 {
+    background-color: var(--font-featured-3);
+}
+
+button {
+    background-color: var(--font-featured-2);
+}

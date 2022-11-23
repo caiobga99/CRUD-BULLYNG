@@ -1,0 +1,46 @@
+@import url(./footer.css);
+@import url(./header.css);
+
+:root {
+    --font-primary: #371DAC;
+    --font-secundary: #0A74FF;
+    --font-tertiary: #14080E;
+    --font-quarternary: #111010;
+    --font-quintenary: #F0EFF4;
+    --font-white: #ffffff;
+    --font-black: #000000;
+    --font-blue: blue;
+}
+
+body {
+    padding-top: 50px;
+    background-color: var(--font-white);
+    color: var(--font-black);
+    text-align: justify;
+}
+
+
+/* main */
+
+main {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+}
+
+.container.container__box {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .6),
+    -5px -5px 5px  rgba(0, 0, 0, .6); 
+    border-radius: .5em;
+    background-color: var(--font-white);
+}
+
+.col-sm>h6 {
+    color: var(--font-primary);
+}
+
+.col-sm {
+    margin: .5em;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .6);
+    border-radius: .6em;
+}

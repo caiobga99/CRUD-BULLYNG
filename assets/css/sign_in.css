@@ -1,0 +1,171 @@
+
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(https://encore.scdn.co/1.2.3/CircularSpotify-UI-Latin-OS2v3-Black.woff2);
+
+@font-face {
+    font-family: 'font-tittle';
+    src: url(https://encore.scdn.co/1.2.3/CircularSpotify-UI-Latin-OS2v3-Black.woff2);
+}
+
+@font-face {
+    font-family: 'font-label';
+    src: url(https://encore.scdn.co/1.2.3/CircularSpotify-UI-Latin-OS2v3-Bold.woff2);
+}
+t
+
+:root {
+    --font-primary: #371DAC;
+    --font-secundary: #0A74FF;
+    --font-tertiary: #14080E;
+    --font-quarternary: #111010;
+    --font-quintenary: #F0EFF4;
+    --font-white: #ffffff;
+    --font-black: #000000;
+    --font-blue: blue;
+    --font-tittle: 'font-tittle';
+    --font-label: 'font-label'
+}
+
+.image__icone_bullying {
+    height: 6rem;
+    width: 6rem;
+}
+
+body {
+    padding-top: 56px;
+    background-color: var(--font-white);
+    color: var(--font-black);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+}
+
+main>* {
+    font-size: 16pt;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.container__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: var(--font-label);
+    padding: .7rem;
+    width: fit-content;
+    margin-left: -2%;
+}
+
+.box__container {
+    padding: .7rem;
+}
+
+
+.container.box__button_footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+.tittleh1 {
+    font-family: var(--font-tittle);
+}
+
+.inp {
+    width: 20em;
+    height: 2em;
+    border-color: rgb(6, 131, 6);
+    border-radius: .3em;
+}
+
+.botaoLogin {
+    padding-top: .7em;
+    float: right;
+}
+
+.buttonSignUp {
+    background-color: var(--font-white);
+    border: 1px solid;
+    border-radius: 1.3em;
+    height: 2.7em;
+    width: 25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(120, 119, 119);
+}
+
+.buttonSignUp:hover {
+    border: 1px solid var(--font-black);
+}
+
+.buttonSignUp:active {
+    box-shadow: 0 0 0 1px var(--font-black), 0 0 0 2px var(--font-black);
+    border: 3px solid var(--font-black);
+}
+
+.btnteste.btn:hover {
+    background-color: rgb(11, 182, 11);
+}
+
+.btnteste:active {
+    box-shadow: 0 0 0 1px var(--font-black), 0 0 0 2px var(--font-black);
+    border: 1px solid var(--font-black);
+    background-color: rgb(11, 182, 11);
+}
+
+.btnteste {
+    border-radius: 13em;
+    font-weight: bold;
+    background-color: rgb(11, 182, 11);
+    margin-top: .6em;
+
+}
+
+hr {
+    border-width: .1em;
+    color: var(--font-black);
+    width: 100%;
+    text-align: left;
+    margin-left: 0
+}
+
+h5 {
+    font-family: var(--font-tittle);
+}
+
+.button_singup>button {
+    width: 23rem;
+    height: 3rem;
+    border-radius: 1em;
+}
+
+.btnteste {
+    display: flex;
+    align-items: flex-end;
+
+}

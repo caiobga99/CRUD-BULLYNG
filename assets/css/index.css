@@ -1,0 +1,42 @@
+@import url(./footer.css);
+@import url(./header.css);
+
+:root {
+    --font-primary: #371DAC;
+    --font-secundary: #0A74FF;
+    --font-tertiary: #14080E;
+    --font-quarternary: #111010;
+    --font-quintenary: #F0EFF4;
+    --font-white: #ffffff;
+    --font-black: #000000;
+    --font-blue: blue;
+}
+
+body {
+    padding-top: 50px;
+    background-color: var(--font-white);
+    color: var(--font-black);
+
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container.card__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+.carousel__image {
+    height: 27em;
+}
+
+/* Modal */
+
+.card-img-top {
+    height: 13em;
+}
