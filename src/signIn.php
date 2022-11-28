@@ -49,37 +49,49 @@
     </header>
 
     <main>
-        <div class=" ">
+        <?php
+        if (isset($_COOKIE["LOGIN-ERROR"])) {
+
+            if ($_COOKIE["LOGIN-ERROR"] == true) {
+                echo " <div class='alert alert-danger' role='alert'>
+                Erro ao logar!Usuario ou senha incorreto
+                </div>";
+            }
+        }
+
+?>
+            <form action="/CRUD-BULLYNG/src/php/logar.php" method="post">
+
+        <div class="container__main">
             <div class="image">
                 <img src="../assets/images/icone-bullying.png" class="image__icone_bullying">
             </div>
             <div class="tittleh1">
                 <h2>
-                    Sign In to Report Bullying
+                    Faça Cadastro em Report Bullying
                 </h2>
             </div>
             <div class="box__container">
                 <div>
                     <div class="label">
-                        Username or email address
+                        E-mail
                     </div>
                     <div class="inp">
-                        <input type="text" class="inp" id="inputUsername" placeholder="Email address or username">
+                        <input id="nome" name="nome" type="email" class="inp" placeholder="Email address or username" required>
                     </div>
                 </div>
                 <div>
                     <div class="label">
-                        Password
+                        Senha
                     </div>
 
                     <div class="inp">
-                        <input type="password" class="inp" placeholder="Passoword">
+                        <input type="password" id="senha" name="senha" class="inp" placeholder="Senha" required >
                     </div>
                     <div class="botaoLogin">
-                        <button class="btnteste btn">LOG IN</button>
+                        <button class="btnteste btn" type="submit">LOGAR</button>
                     </div>
-                </div>
-            </div>
+                    </form>
 
             <div class="container__main box__button_footer">
 

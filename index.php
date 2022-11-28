@@ -1,6 +1,8 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,10 +43,18 @@
                         </li>
                     </ul>
             </div>
-                <div>
-                    <a href="./src/signIn.php"> <button class="btn btn-primary botaosign">Sign In</button></a>
-                    <a href="./src/signUp.php"> <button class="btn btn-primary botaosign">Sign Up</button></a>
-                </div>
+                <div><?php
+                if (isset($_SESSION['logged'])) {
+                    if($_SESSION['logged'] == true){
+                        echo " <a href='./src/php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button>";
+                    }
+                }
+                else{
+                    echo "<a href='./src/signIn.php'> <button class='btn btn-primary botaosign'>Sign In</button></a>";
+                    echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'>Sign Up</button></a>";
+                }
+                 ?>
+               
             </div>
         </nav>
     </header>

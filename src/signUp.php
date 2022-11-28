@@ -54,25 +54,25 @@
             </div>
             <div class="tittleh1">
                 <h2>
-                    Sign Up to Report Bullying
+                    Faça Cadastro em Report Bullying
                 </h2>
             </div>
             <div class="box__container">
                 <div>
                     <div class="label">
-                        Username or email address
+                        E-mail
                     </div>
                     <div class="inp">
-                        <input id="nome" name="nome" type="text" class="inp" placeholder="Email address or username">
+                        <input id="nome" name="nome" type="email" class="inp" placeholder="Email address or username" required>
                     </div>
                 </div>
                 <div>
                     <div class="label">
-                        Password
+                        Senha
                     </div>
 
                     <div class="inp">
-                        <input type="password" id="senha" name="senha" class="inp" placeholder="Passoword">
+                        <input type="password" id="senha" name="senha" class="inp" placeholder="Passoword" required>
                     </div>
                     <div class="botaoLogin">
                         <button class="btnteste btn" type="submit">SIGN UP</button>
@@ -97,7 +97,6 @@
             <div class="buttonsingup">
                 <a href="./signIn.php"><button class="buttonSignUp">Sign In for Report Bullying</button></a>
             </div>
-
 
         </div>
 

@@ -9,4 +9,5 @@ $conexao = new PDO("mysql:host=$porta;
 dbname=$nomeDoBanco", $usuarioBanco,
 $senhaBanco);
 
+$isLogged = true;
 ?>
