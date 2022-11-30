@@ -1,0 +1,29 @@
+.container_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.container__conteudo {
+    display: flex;
+    flex-direction: column;
+}
+.titulo__denuncia {
+    box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -webkit-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -moz-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    width: 70%;
+    margin-bottom: .5rem;
+    background-color: yellowgreen;
+}
+
+.conteudo__denuncia {
+    box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -webkit-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -moz-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    width: 70%;
+    height: 60vh;
+    background-color: violet;
+
+}

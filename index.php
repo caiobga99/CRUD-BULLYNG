@@ -1,8 +1,9 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +32,7 @@ session_start();
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
-                        </li>   
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./src/sobre-nos.php">Sobre Nós</a>
                         </li>
@@ -42,20 +43,22 @@ session_start();
                             <a class="nav-link" href="./src/faq.php">FAQ</a>
                         </li>
                     </ul>
-            </div>
-                <div><?php
+                </div>
+                <div>
+                    <?php
                 if (isset($_SESSION['logged'])) {
-                    if($_SESSION['logged'] == true){
-                        echo " <a href='./src/php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button>";
+                    if ($_SESSION['logged'] == true) {
+                        echo "<a href='./src/php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button></a>";
                     }
+                } 
+                else {
+                   
+                    echo "<a href='./src/signIn.php'>  <button class='btn btn-primary botaosign'>Entrar</button> </a>  ";
+                    echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'> Cadastrar </button></a>";
                 }
-                else{
-                    echo "<a href='./src/signIn.php'> <button class='btn btn-primary botaosign'>Sign In</button></a>";
-                    echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'>Sign Up</button></a>";
-                }
-                 ?>
-               
-            </div>
+                ?>
+
+                </div>
         </nav>
     </header>
 
@@ -71,8 +74,7 @@ session_start();
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./assets/images/bullying-carousel.jpg" class="d-block w-100 carousel__image"
-                        alt="...">
+                    <img src="./assets/images/bullying-carousel.jpg" class="d-block w-100 carousel__image" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="./assets/images/bullying-nao-carousel.png" class="d-block w-100 carousel__image"
@@ -100,7 +102,9 @@ session_start();
                 <img src="./assets/images/diga-nao-bullying.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Bullying é uma palavra de origem inglesa que designa atos de agressão e intimidação repetitivos contra um indivíduo que não é aceito por um grupo, geralmente na escola. </p>
+                    <p class="card-text">Bullying é uma palavra de origem inglesa que designa atos de agressão e
+                        intimidação repetitivos contra um indivíduo que não é aceito por um grupo, geralmente na escola.
+                    </p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -108,7 +112,9 @@ session_start();
                 <img src="./assets/images/bullying.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">A prática do bullying  também chamado de intimidação sistemática, intimidação vexatória, violência escolar e bulimento consiste em um conjunto de violências que se repetem por algum período.</p>
+                    <p class="card-text">A prática do bullying também chamado de intimidação sistemática, intimidação
+                        vexatória, violência escolar e bulimento consiste em um conjunto de violências que se repetem
+                        por algum período.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -116,7 +122,9 @@ session_start();
                 <img src="./assets/images/placa-bullying.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Bullying é uma palavra de origem inglesa que designa atos de agressão e intimidação repetitivos contra um indivíduo que não é aceito por um grupo, geralmente na escola. </p>
+                    <p class="card-text">Bullying é uma palavra de origem inglesa que designa atos de agressão e
+                        intimidação repetitivos contra um indivíduo que não é aceito por um grupo, geralmente na escola.
+                    </p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

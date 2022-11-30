@@ -46,8 +46,17 @@
 
         <div class="container_form">
             <h1 class="title_contato"><i class="icon icon-file-text-o"></i> Fale Conosco</h1>
+    <?php
+    if (isset($_COOKIE["SUCCESS"])) {
+        if ($_COOKIE["SUCCESS"] == true) {
 
-            <form method="post" action="#">
+        echo "<div class='alert alert-secondary' role='alert'>
+        Denuncia Realizada com Sucesso!
+      </div>";
+    } 
+}
+    ?>
+            <form method="post" action="/CRUD-BULLYNG/src/php/denunciar.php">
                 <div class="style-form-input full">
                     <input type="text" name="nome" required />
                     <label><i class="icon icon-user-1"></i> Nome</label>
@@ -59,7 +68,7 @@
                 </div>
 
                 <div class="style-form-input right">
-                    <input type="text" name="assunto" required />
+                    <input type="number" name="RA" required />
                     <label><i class="icon icon-info-circled"></i> RA</label>
                 </div>
 
