@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,6 +39,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../src/faq.php">FAQ</a>
                         </li>
+                        <?php
+
+     if (isset($_SESSION["isAdmin"])) {
+         if ($_SESSION["isAdmin"] == true) {
+             echo " <li class='nav-item'>
+                    <a class='nav-link' href='./painel.php'>Painel</a>
+
+                </li>";
+         }
+     }
+     ?>
                     </ul>
                 </div>
             </div>
@@ -46,15 +60,15 @@
 
         <div class="container_form">
             <h1 class="title_contato"><i class="icon icon-file-text-o"></i> Fale Conosco</h1>
-    <?php
+            <?php
     if (isset($_COOKIE["SUCCESS"])) {
         if ($_COOKIE["SUCCESS"] == true) {
 
-        echo "<div class='alert alert-secondary' role='alert'>
+            echo "<div class='alert alert-secondary' role='alert'>
         Denuncia Realizada com Sucesso!
       </div>";
-    } 
-}
+        }
+    }
     ?>
             <form method="post" action="/CRUD-BULLYNG/src/php/denunciar.php">
                 <div class="style-form-input full">

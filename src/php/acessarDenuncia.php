@@ -1,29 +1,40 @@
 <?php
 require_once("../php/conexao.php");
 
-$id = $_GET["id"];
+
+$idRecebido = $_GET["id"];  
+
+$allIds = $conexao->query("SELECT id from denuncia");
+$fetchAllIds = $allIds->fetchAll();
 
 
+$atualId = $fetchAllIds[$idRecebido - 1];
 
-$previous = $id;
-$next = 1;
+$query = $conexao->query("SELECT nome, mensagem, RA FROM denuncia WHERE id=$atualId[0]");    
 
-$pageDown = $id -1;
-$pageUp = $id + 1;
-
-$query = $conexao->query("SELECT nome, mensagem FROM denuncia LIMIT $previous,$next");
+$fetchAllDenuncia = $query->fetchAll();
 
 
+$DenunciaArray = $fetchAllDenuncia[0];
+
+
+$nome = $DenunciaArray[0];
+
+$mensagem = $DenunciaArray[1];
+
+$RA = $DenunciaArray[2];
 
 ?>
 <?php
-echo "<a href='acessarDenuncia.php?id=$pageDown'>previous</a>";
+$previous = $idRecebido - 1;
+if($previous != 0){
+    echo "<a href='acessarDenuncia.php?id=$previous'>previous</a>";
+}
 ?>
-<?php
-    $dados = $query->fetch(PDO::FETCH_OBJ);
-    $mensagem = $dados->mensagem;
-    echo $mensagem;
- ?>
  <?php
-echo "<a href='acessarDenuncia.php?id=$pageUp'>next</a>";
+$next = $idRecebido + 1;
+$ultimoId = $fetchAllIds[count($fetchAllIds) - 1];
+if($atualId[0] != $ultimoId[0]){
+    echo "<a href='acessarDenuncia.php?id=$next'>next</a>";
+}
 ?>

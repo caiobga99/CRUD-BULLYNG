@@ -76,7 +76,7 @@
                         E-mail
                     </div>
                     <div class="inp">
-                        <input id="nome" name="nome" type="email" class="inp" placeholder="Email address or username" required>
+                        <input id="nome" name="nome" type="email" class="inp" placeholder="E-mail" required>
                     </div>
                 </div>
                 <div>
@@ -85,10 +85,10 @@
                     </div>
 
                     <div class="inp">
-                        <input type="password" id="senha" name="senha" class="inp" placeholder="Passoword" required>
+                        <input type="password" id="senha" name="senha" class="inp" placeholder="Senha" required>
                     </div>
                     <div class="botaoLogin">
-                        <button class="btnteste btn" type="submit">SIGN UP</button>
+                        <button class="btnteste btn" type="submit">Cadastrar</button>
                     </div>
                     </form>
                 </div>
@@ -103,12 +103,11 @@
 
             <h5>
 
-                You already have an account?
-
+                    Já tem uma conta?
             </h5>
 
             <div class="buttonsingup">
-                <a href="./signIn.php"><button class="buttonSignUp">Sign In for Report Bullying</button></a>
+                <a href="./signIn.php"><button class="buttonSignUp" type="button">Entre com a sua conta</button></a>
             </div>
 
         </div>

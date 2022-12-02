@@ -1,0 +1,80 @@
+.container__container__form_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6.6rem;
+    margin-right: 6.6rem;
+}
+.image__flecha {
+    height: 5.5rem;
+}
+.box__container {
+    display: flex;
+    flex-direction: row;
+}
+.none_image {
+    display: none;
+}
+.image__flecha__cell {
+    height: 3.4rem;
+}
+@media (max-width : 1080px) {
+    .container__container__form_icons {
+        width: 100%;
+        margin: 0;
+    }
+    main {
+        width: 100%;
+    }
+    .icon__arrow_right {
+        display: none;
+    }
+    .icon__arrow_left {
+        display: none;
+    }
+    .none_image {
+        display: initial;
+    }
+    .container_form {
+        width: 100%;
+    }
+    .conteudo__denuncia {
+        width: 88%;
+    }
+}
+.container_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.RA {
+    display: flex;
+    color: gray;
+    justify-content: flex-end;
+    font-style: italic;
+    align-items: flex-end;
+}
+.container__conteudo {
+    display: flex;
+    flex-direction: column;
+}
+.titulo__denuncia {
+    box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -webkit-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -moz-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    width: 70%;
+    margin-bottom: .5rem;
+    background-color: green;
+}
+
+.conteudo__denuncia {
+    box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -webkit-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    -moz-box-shadow: -2px 7px 9px 5px rgba(0,0,0,0.47);
+    width: 70%;
+    height: 60vh;
+
+}

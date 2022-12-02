@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,17 +12,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="icon" type="png" href="../assets/images/icone-bullying.png">
-    <link rel="stylesheet" href="../assets/css/sign_in.css">
-    <title>Sign In to Report Bullying</title>
+    <link rel="stylesheet" href="../assets/css/perfil.css">
+    <title>Denuncie</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container-fluid">
-                <div class="image">
-                    <img src="../assets/images/icone-bullying.png" alt="" class="image_navbar">
-                </div>
+                <img src="../assets/images/icone-bullying.png" alt="" class="image_navbar">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,91 +30,71 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
                         </li>
-                        <li class="nait
-                        v-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="../src/sobre-nos.php">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../src/denuncias.php">Denuncie</a>
+                            <a class="nav-link " href="../src/denuncias.php">Denuncie</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../src/faq.php">FAQ</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../src/faq.php">Perfil</a>
+                        </li>
+                        <?php
+
+     if (isset($_SESSION["isAdmin"])) {
+         if ($_SESSION["isAdmin"] == true) {
+             echo " <li class='nav-item'>
+                    <a class='nav-link' href='./painel.php'>Painel</a>
+
+                </li>";
+         }
+     }
+     ?>
                     </ul>
-                </div>
-                <div>
-                    <a href="../src/signUp.php"> <button class="btn btn-primary botaosign">Sign Up</button></a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <?php
-        if (isset($_COOKIE["LOGIN-ERROR"])) {
 
-            if ($_COOKIE["LOGIN-ERROR"] == true) {
-                echo " <div class='alert alert-danger' role='alert'>
-                Erro ao logar!Usuario ou senha incorreto
-                </div>";
-            }
+        <div class="container_form">
+            <h1 class="title_contato"><i class="icon icon-file-text-o"></i> Fale Conosco</h1>
+            <?php
+    if (isset($_COOKIE["SUCCESS"])) {
+        if ($_COOKIE["SUCCESS"] == true) {
+
+            echo "<div class='alert alert-secondary' role='alert'>
+        Denuncia Realizada com Sucesso!
+      </div>";
         }
+    }
+            $email = $_SESSION['email'];
+            echo "<form method='post' action='/CRUD-BULLYNG/src/php/denunciar.php'>";
+            echo "<div class='style-form-input'>";
+            echo "<input type='text' value='$email' name='email' required />";
+            echo "<label><i class='icon icon-mail-1'></i> E-mail</label>";
+            echo "</div>";
 
+            echo "<div class='style-form-input'>";
+            echo "<input type='password' name='senha' required />";
+            echo "<label><i class='icon icon-info-circled'></i> Senha Atual</label>";
+            echo "</div>";
+            echo "<div class='style-form-input'>";
+            echo "<input type='password' name='novaSenha' required />";
+            echo "<label><i class='icon icon-info-circled'></i>Nova Senha</label>";
+            echo "</div>";
+            echo "<div class='style-form-input full'>";
+            echo "<input type='hidden' name='acao' value='enviar'>";
+            echo "<button class='btn-submit'>Confirmar Atualização</button>";
+
+            echo "</div>";
+            echo "</form>";
+            echo "</div>";
 ?>
-            <form action="/CRUD-BULLYNG/src/php/logar.php" method="post">
-
-        <div class="container__main">
-            <div class="image">
-                <img src="../assets/images/icone-bullying.png" class="image__icone_bullying">
-            </div>
-            <div class="tittleh1">
-                <h2>
-                    Faça Cadastro em Report Bullying
-                </h2>
-            </div>
-            <div class="box__container">
-                <div>
-                    <div class="label">
-                        E-mail
-                    </div>
-                    <div class="inp">
-                        <input id="nome" name="nome" type="email" class="inp" placeholder="E-mail" required>
-                    </div>
-                </div>
-                <div>
-                    <div class="label">
-                        Senha
-                    </div>
-
-                    <div class="inp">
-                        <input type="password" id="senha" name="senha" class="inp" placeholder="Senha" required >
-                    </div>
-                    <div class="botaoLogin">
-                        <button class="btnteste btn" type="submit">LOGAR</button>
-                    </div>
-                    </form>
-
-            <div class="container__main box__button_footer">
-
-            </div>
-
-            <hr />
-
-            <h5>
-
-                Não tem uma conta?
-
-            </h5>
-
-            <div class="buttonsingup">
-                <a href="./signUp.php"> <button class="buttonSignUp" type="button">Cadastre uma conta nova</button> </a>
-            </div>
-
-
-        </div>
-
-
-
     </main>
 
     <footer class="main_footer container_footer">
@@ -127,8 +108,9 @@
 
                     <li><a href="../index.php" title="Página Inícial">Página Inícial</a></li>
                     <li><a href="../src/sobre-nos.php" title="Sobre a Empresa">Sobre a Empresa</a></li>
-                    <li><a href="../src/denuncias.php" title="Denuncie">Denuncie</a></li>
+                    <li><a href="../src/denuncie.php" title="Denuncie">Denuncie</a></li>
                     <li><a href="../src/faq.php" title="Fale Conosco">Fale Conosco</a></li>
+                    <li><a href="../src/denuncie.php" title="Denuncie">Perfil</a></li>
 
                 </ul>
             </div>
@@ -172,13 +154,17 @@
 
 
 
-    
+
+
+
+
 
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+    <script src="../src/js/scripts.js"></script>
 </body>
 
 </html>

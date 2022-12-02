@@ -17,7 +17,6 @@ session_start();
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <div class="container-fluid">
@@ -42,21 +41,36 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link" href="./src/faq.php">FAQ</a>
                         </li>
+                        
+
+
+
+                        <?php
+                                if (isset($_SESSION["isAdmin"])) {
+                                    if ($_SESSION["isAdmin"] == true) {
+                                        echo " <li class='nav-item'>
+                    <a class='nav-link' href='./src/painel.php'>Painel</a>
+                </li>";
+                                    }
+                                }
+                                ?>
                     </ul>
                 </div>
                 <div>
                     <?php
-                if (isset($_SESSION['logged'])) {
-                    if ($_SESSION['logged'] == true) {
-                        echo "<a href='./src/php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button></a>";
+                    if (isset($_SESSION['logged'])) {
+                        if ($_SESSION['logged'] == true) {
+                            echo "<a href='./src/php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button></a>";
+                           
+                        }
+                    } else {
+
+                        echo "<div>";
+                        echo "<a href='./src/signIn.php'> <button class='btn btn-primary botaosign'>Entrar</button></a>" . PHP_EOL;
+                        echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'>Cadastrar</button></a>";
+                        echo "</div>";
                     }
-                } 
-                else {
-                   
-                    echo "<a href='./src/signIn.php'>  <button class='btn btn-primary botaosign'>Entrar</button> </a>  ";
-                    echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'> Cadastrar </button></a>";
-                }
-                ?>
+                    ?>
 
                 </div>
         </nav>
@@ -129,25 +143,7 @@ session_start();
                 </div>
             </div>
         </div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error, quas impedit earum eius a quisquam, in ipsam,
-        non beatae vero exercitationem perferendis est rem voluptatibus. Tempore veniam voluptatum dicta.
+        
     </main>
 
     <footer class="main_footer container_footer">
@@ -199,7 +195,8 @@ session_start();
 
             <p class="m-b-footer"> Report Bullying - 2022, todos os direitos reservados.</p>
             <p class="by"><i class="icon icon-heart-3"></i> Desenvolvido por: <a href="https://github.com/caiobga99"
-                    title="Seu nome">Caio</a></p>
+                    title="Seu nome">Caio</a>, <a href="https://github.com/caiobga99" title="Seu nome">Gabriel</a>, <a
+                    href="https://github.com/caiobga99" title="Seu nome">Rafael</a></p>
 
         </div>
     </footer>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,6 +39,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="../src/faq.php">FAQ</a>
                         </li>
+                        <?php
+
+             if (isset($_SESSION["isAdmin"])) {
+                 if ($_SESSION["isAdmin"] == true) {
+                     echo " <li class='nav-item'>
+                    <a class='nav-link' href='./painel.php'>Painel</a>
+
+                </li>";
+                 }
+             }
+             ?>
                     </ul>
                 </div>
             </div>

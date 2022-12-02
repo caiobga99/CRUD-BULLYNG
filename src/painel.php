@@ -1,5 +1,54 @@
 <?php
 session_start();
+if (!isset($_SESSION["isAdmin"])) {
+    header("location:../index.php");
+} else {
+    if ($_SESSION["isAdmin"] == false) {
+        header("location:../index.php");
+    }
+}
+
+
+require_once("php/conexao.php");
+
+$idRecebido = $_GET["id"];
+
+if (!isset($idRecebido)) {
+    header('location:./painel.php?id=1');
+}
+//GET
+
+$allIds = $conexao->query("SELECT id from denuncia");
+$fetchAll = $allIds->fetchAll();
+//QUERY FOR ALL IDS
+
+
+$atualId = $fetchAll[$idRecebido - 1];
+//ID FROM GET TO FIT QUERY
+
+
+$query = $conexao->query("SELECT nome, mensagem, RA FROM denuncia WHERE id=$atualId[0]");
+//QUERY TO GET ATUAL PAGE USING ADAPTED ID
+
+$previous = $idRecebido - 1;
+
+$next = $idRecebido + 1;
+
+$ultimoId = $fetchAll[count($fetchAll) - 1];
+//VARIABLES FOR RESTRICTING ACCESS TO ERROR PAGES
+
+
+$fetchAllDenuncia = $query->fetchAll();
+
+
+$DenunciaArray = $fetchAllDenuncia[0];
+
+$nome = $DenunciaArray[0];
+
+$mensagem = $DenunciaArray[1];
+
+$RA = $DenunciaArray[2];
+//VARIABLES FOR FACILITATE FRONT
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,8 +63,7 @@ session_start();
     <link rel="icon" type="png/" href="./src/images/icone-bullying.png">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/denuncie.css">
-    <link rel="stylesheet" href="../assets/css/painel.css">
-
+    <link rel="stylesheet" href="../assets/css/painelCerto.css">
     <title>Report Bullying</title>
 </head>
 
@@ -34,16 +82,19 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                            <a class="nav-link " aria-current="page" href="../index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="././sobre-nos.php">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./src/denuncias.php">Denuncie</a>
+                            <a class="nav-link" href="././denuncias.php">Denuncie</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./src/faq.php">FAQ</a>
+                            <a class="nav-link" href="././faq.php">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="././painel.php">Painel</a>
                         </li>
                     </ul>
                 </div>
@@ -54,9 +105,10 @@ session_start();
                             echo "<a href='./php/deslogar.php'><button class='btn btn-primary botaosign'>Deslogar</button></a>";
                         }
                     } else {
-
-                        echo "<a href='./src/signIn.php'>  <button class='btn btn-primary botaosign'>Entrar</button> </a>  ";
+                        echo "<div>";
+                        echo "<a href='./src/signIn.php'>  <button class='btn btn-primary botaosign'>Entrar</button> </a>  " . PHP_EOL;
                         echo "<a href='./src/signUp.php'> <button class='btn btn-primary botaosign'> Cadastrar </button></a>";
+                        echo "</div>";
                     }
                     ?>
 
@@ -66,14 +118,78 @@ session_start();
     <main>
         <main>
 
-        <?php
-        ?>
+            <?php
+            ?>
+            <div class="container__container__form_icons">
 
-            <div class="container_form">
+                <div class="icon__arrow_left">
+                <?php
+                if($previous != 0){
+                    echo "<a href='./painel.php?id=$previous'>";
+                    echo "<img src='../assets/images/arrow-left-circle-fill.svg' class='image__flecha arrow__left' alt='Flecha esquerda'>";
+                    echo "</a>";
+                } else {
+                    echo "<img src='../assets/images/arrow-left-circle-fill gray.svg' class='image__flecha arrow__left' alt='Flecha esquerda'>";
+                }
+                ?>
+                </div>
+
+                <div class="container_form">
+                    <div class="box__container">
+                        <?php
+                           if($previous != 0){
+                               echo "<a href='./painel.php?id=$previous'>";
+                               echo "<img src='../assets/images/arrow-left-circle-fill.svg' class='image__flecha__cell arrow__left none_image' alt='Flecha esquerda'>";
+                               echo "</a>";
+                           } 
+                           else {
+                               echo "<img src='../assets/images/arrow-left-circle-fill gray.svg' class='image__flecha__cell arrow__left none_image' alt='Flecha esquerda'>";
+                           }
+                           if($atualId[0] != $ultimoId[0]){
+                            echo "<a href='./painel.php?id=$next'>";
+                            echo "<img src='../assets/images/arrow-right-circle-fill.svg' class='image__flecha__cell none_image' alt='Flecha Direita'>";
+                            echo "</a>";
+                        } 
+                        else {
+                            echo "<img src='../assets/images/arrow-right-circle-fill gray.svg' class='image__flecha__cell none_image' alt='Flecha Direita'>";
+                    }
+                    ?>
+                    </div>
                     <h1 class="title_contato"><i class="icon icon-file-text-o"></i> Fale Conosco</h1>
-                    <div class="titulo__denuncia">1</div>
-                    <div class="conteudo__denuncia">2</div>
+                    <?php
+                    echo "<div class='titulo__denuncia'>";
+                    echo "$nome" . PHP_EOL;
+                    echo "</div>";
+                    echo "<div class='conteudo__denuncia'>";
+                    // echo "$mensagem".PHP_EOL;
+                    echo "
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, nihil, error sapiente velit veniam inventore, quia mollitia nemo cum ea temporibus. Vitae quibusdam facilis debitis atque laudantium rem nostrum molestias.
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, nihil, error sapiente velit veniam inventore, quia mollitia nemo cum ea temporibus. Vitae quibusdam facilis debitis atque laudantium rem nostrum molestias.
+                ";
+                    echo "<div class='RA'>";
+                    echo "RA-$RA" . PHP_EOL;
+                    echo "</div>";
+                    echo "</div>";
+                    ?>
+
+
+                </div>
+                <?php 
+                    if($atualId[0] != $ultimoId[0]){
+                        echo "<div class='icon__arrow_right'>";
+                        echo "<a href='./painel.php?id=$next'>";
+                        echo "<img src='../assets/images/arrow-right-circle-fill.svg' class='image__flecha arrow__right' alt='Flecha Direita'>";
+                        echo "</a>";
+                        echo "</div>";
+                    } else {
+                        echo "<div class='icon__arrow_right'>";
+                        echo "<img src='../assets/images/arrow-right-circle-fill gray.svg' class='image__flecha arrow__right' alt='Flecha Direita'>";
+                        echo "</div>";
+                }
+                ?>
+                
             </div>
+
 
         </main>
 
@@ -92,8 +208,8 @@ session_start();
 
                     <li><a href="../index.php" title="Página Inícial">Página Inícial</a></li>
                     <li><a href="./sobre-nos.php" title="Sobre a Empresa">Sobre a Empresa</a></li>
-                    <li><a href="./src/denuncias.php" title="Denuncie">Denuncie</a></li>
-                    <li><a href="./src/faq.php" title="Fale Conosco">Fale Conosco</a></li>
+                    <li><a href="./denuncias.php" title="Denuncie">Denuncie</a></li>
+                    <li><a href="./faq.php" title="Fale Conosco">Fale Conosco</a></li>
 
                 </ul>
             </div>

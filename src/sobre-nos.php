@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,6 +39,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../src/faq.php">FAQ</a>
                         </li>
+                        <?php
+
+                        if (isset($_SESSION["isAdmin"])) {
+                            if ($_SESSION["isAdmin"] == true) {
+                                echo " <li class='nav-item'>
+         <a class='nav-link' href='./painel.php'>Painel</a>
+         </li>";
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -53,40 +66,40 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
         corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
         sit quo!
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
         corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
         sit quo!
