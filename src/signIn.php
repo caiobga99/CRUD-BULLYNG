@@ -42,7 +42,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="../src/signUp.php"> <button class="btn btn-primary botaosign">Sign Up</button></a>
+                    <a href="../src/signUp.php"> <button class="btn btn-primary botaosign">Cadastrar</button></a>
                 </div>
             </div>
         </nav>
@@ -68,7 +68,7 @@
             </div>
             <div class="tittleh1">
                 <h2>
-                    Faça Cadastro em Report Bullying
+                    Entre em Report Bullying
                 </h2>
             </div>
             <div class="box__container">
@@ -89,14 +89,16 @@
                         <input type="password" id="senha" name="senha" class="inp" placeholder="Senha" required >
                     </div>
                     <div class="botaoLogin">
-                        <button class="btnteste btn" type="submit">LOGAR</button>
+                        <button class="btnteste btn" type="submit">Entrar</button>
                     </div>
                     </form>
+                    </div>
+                    </div>
 
             <div class="container__main box__button_footer">
 
             </div>
-
+            
             <hr />
 
             <h5>

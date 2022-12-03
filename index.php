@@ -30,16 +30,16 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="./src/page-animation.php?page=index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./src/sobre-nos.php">Sobre Nós</a>
+                            <a class="nav-link" href="./src/page-animation.php?page=sobre-nos">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./src/denuncias.php">Denuncie</a>
+                            <a class="nav-link" href="./src/page-animation.php?page=denuncias">Denuncie</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./src/faq.php">FAQ</a>
+                            <a class="nav-link" href="./src/page-animation.php?page=faq">FAQ</a>
                         </li>
                         
 
@@ -155,10 +155,10 @@ session_start();
 
                 <ul>
 
-                    <li><a href="./index.php" title="Página Inícial">Página Inícial</a></li>
-                    <li><a href="./src/sobre-nos.php" title="Sobre a Empresa">Sobre a Empresa</a></li>
-                    <li><a href="./src/denuncias.php" title="Denuncie">Denuncie</a></li>
-                    <li><a href="./src/faq.php" title="Fale Conosco">Fale Conosco</a></li>
+                    <li><a href="./src/page-animation.php?page=index" title="Página Inícial">Página Inícial</a></li>
+                    <li><a href="./src/page-animation.php?page=sobre-nos" title="Sobre a Empresa">Sobre a Empresa</a></li>
+                    <li><a href="./src/page-animation.php?page=denuncias" title="Denuncie">Denuncie</a></li>
+                    <li><a href="./src/page-animation.php?page=faq" title="Fale Conosco">Fale Conosco</a></li>
 
                 </ul>
             </div>

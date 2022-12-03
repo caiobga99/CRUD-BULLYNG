@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -39,16 +36,9 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link" href="../src/faq.php">FAQ</a>
                         </li>
-                        <?php
-
-                        if (isset($_SESSION["isAdmin"])) {
-                            if ($_SESSION["isAdmin"] == true) {
-                                echo " <li class='nav-item'>
-         <a class='nav-link' href='./painel.php'>Painel</a>
-         </li>";
-                            }
-                        }
-                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../src/perfil.php">Perfil</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -56,93 +46,30 @@ session_start();
     </header>
 
     <main>
-        teste
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
 
+<div class="container_sobrenos">
+    <div class="box1">
+        <img src="../assets/images/anarita.jpg" alt="" class="imagemAR" />
+    </div>
+    <div class="box2">
+        <div class="tittle__sobrenos">
+                <div>
+                    Sobre Nós!
+                </div>
+        </div>
+        <div class="conteudo__sobrenos">
+            <p>
+                Somos alunos da escola Ana Rita Godinho pousa, Queremos ser desenvolvedores no futuro e fizemos
+                esse app para nos superar cada vez mais.
+            </p>
+        </div>
+    </div>
+</body>
 
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde? Saepe pariatur doloremque deleniti
-        corporis? Ea nostrum, atque dolor iste cum quibusdam quisquam nobis, aspernatur nam consectetur necessitatibus
-        sit quo!
-    </main>
+</div>
+</main>
 
     <footer class="main_footer container_footer">
 

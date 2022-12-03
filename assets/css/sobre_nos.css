@@ -10,21 +10,60 @@
     --font-white: #ffffff;
     --font-black: #000000;
     --font-blue: blue;
+        --color-bg: linear-gradient(to top,#010329,#000005);
+        --color-glass:linear-gradient(to left,#142544,#1a9092);
+        --color-water:linear-gradient(to left,#142544,#1b6d6e);
+    
 }
 
 body {
     padding-top: 50px;
-    background-color: var(--font-white);
     color: var(--font-black);
+    background-color: #ECEAEA;
+}
+/* border effect box down */
+
+
+/* border effect up */
+
+.container_sobrenos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-items: center;
+}
+.tittle__sobrenos, .conteudo__sobrenos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    font-size: 17pt;
+} 
+  
+ 
+
+
+.box1 {
+    width: 25%;
+}
+
+.box2 { 
+    /* text-align: justify; */
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-image: linear-gradient(43deg, #ffffff 0%, #dab6ff 46%, #95d1f9 100%);
 }
 
 
-
-/* main */
-
-/* 
-main {
-    display: flex;
-    flex-direction: column;
+.imagemAR{
     width: 100%;
-} */
+    
+}

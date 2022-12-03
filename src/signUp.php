@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="../src/signIn.php"> <button class="btn btn-primary botaosign">Sign In</button></a>
+                    <a href="../src/signIn.php"> <button class="btn btn-primary botaosign">Entrar</button></a>
                 </div>
             </div>
         </nav>
@@ -58,8 +58,7 @@
         }
 
 ?>
-    <form action="/CRUD-BULLYNG/src/php/cadastrar.php" method="post"
->
+    <form action="/CRUD-BULLYNG/src/php/cadastrar.php" method="post">
 
         <div class="container__main">
             <div class="image">

@@ -1,0 +1,11 @@
+.container__container_lista {
+    margin: 1.7rem;
+    padding: 1.7rem;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, .6),
+        -5px -5px 5px  rgba(0, 0, 0, .6); 
+        border-radius: .5em;
+        background-color: var(--font-white);
+}
+a {
+    text-decoration: none;
+}
